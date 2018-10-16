@@ -178,7 +178,7 @@ class NamespaceLanding extends React.Component {
       <div className="page-content">
         { !this.state.error ? null : <ErrorBanner message={this.state.error} /> }
         { !this.state.loaded ? <Spinner /> : this.renderAccordion() }
-      </div>);
+      </div>)
   }
 }
 
