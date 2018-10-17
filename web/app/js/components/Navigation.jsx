@@ -1,6 +1,21 @@
+import {
+  AppBar,
+  Collapse,
+  Divider,
+  Drawer,
+  IconButton,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  MenuItem,
+  MenuList,
+  Toolbar,
+  Typography
+} from '@material-ui/core';
+import { githubIcon, linkerdWordLogo, slackIcon } from './util/SvgWrappers.jsx';
+
 import BreadcrumbHeader from './BreadcrumbHeader.jsx';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import classNames from 'classnames';
 import CloudQueueIcon from '@material-ui/icons/CloudQueue';
 import EmailIcon from '@material-ui/icons/Email';
 import ExpandLess from '@material-ui/icons/ExpandLess';
@@ -18,23 +33,9 @@ import ReactRouterPropTypes from 'react-router-prop-types';
 import Version from './Version.jsx';
 import ViewListIcon from '@material-ui/icons/ViewList';
 import VisibilityIcon from '@material-ui/icons/Visibility';
+import classNames from 'classnames';
 import { withContext } from './util/AppContext.jsx';
 import { withStyles } from '@material-ui/core/styles';
-import {
-  AppBar,
-  Collapse,
-  Divider,
-  Drawer,
-  IconButton,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  MenuItem,
-  MenuList,
-  Toolbar,
-  Typography
-} from '@material-ui/core';
-import { githubIcon, linkerdWordLogo, slackIcon } from './util/SvgWrappers.jsx';
 
 const drawerWidth = 250;
 const styles = theme => ({

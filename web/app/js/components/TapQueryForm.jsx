@@ -1,10 +1,3 @@
-import _ from 'lodash';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import PropTypes from 'prop-types';
-import React from 'react';
-import TapQueryCliCmd from './TapQueryCliCmd.jsx';
-import { withStyles } from '@material-ui/core/styles';
-import { addUrlProps, UrlQueryParamTypes } from 'react-url-query';
 import {
   Button,
   Card,
@@ -21,13 +14,21 @@ import {
   TextField,
   Typography
 } from '@material-ui/core';
+import { UrlQueryParamTypes, addUrlProps } from 'react-url-query';
 import {
   defaultMaxRps,
   emptyTapQuery,
   httpMethods,
-  tapQueryProps,
-  tapQueryPropType
+  tapQueryPropType,
+  tapQueryProps
 } from './util/TapUtils.jsx';
+
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import PropTypes from 'prop-types';
+import React from 'react';
+import TapQueryCliCmd from './TapQueryCliCmd.jsx';
+import _ from 'lodash';
+import { withStyles } from '@material-ui/core/styles';
 
 // you can also tap resources to tap all pods in the resource
 const resourceTypes = [

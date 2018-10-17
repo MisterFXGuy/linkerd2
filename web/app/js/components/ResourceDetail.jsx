@@ -1,17 +1,19 @@
-import _ from 'lodash';
+import 'whatwg-fetch';
+
+import { emptyMetric, processSingleResourceRollup } from './util/MetricUtils.jsx';
+import { resourceTypeToCamelCase, singularResource } from './util/Utils.js';
+
 import AddResources from './AddResources.jsx';
 import ErrorBanner from './ErrorBanner.jsx';
 import MetricsTable from './MetricsTable.jsx';
 import Octopus from './Octopus.jsx';
-import { processNeighborData } from './util/TapUtils.jsx';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Spinner from './util/Spinner.jsx';
 import TopModule from './TopModule.jsx';
+import _ from 'lodash';
+import { processNeighborData } from './util/TapUtils.jsx';
 import { withContext } from './util/AppContext.jsx';
-import { emptyMetric, processSingleResourceRollup } from './util/MetricUtils.jsx';
-import { resourceTypeToCamelCase, singularResource } from './util/Utils.js';
-import 'whatwg-fetch';
 
 const getResourceFromUrl = (match, pathPrefix) => {
   let resource = {

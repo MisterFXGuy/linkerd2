@@ -1,4 +1,6 @@
-import _ from 'lodash';
+import { displayName, metricToFormatter } from './util/Utils.js';
+import { getSuccessRateClassification, srArcClassLabels } from './util/MetricUtils.jsx' ;
+
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
@@ -11,8 +13,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import Typography from '@material-ui/core/Typography';
-import { displayName, metricToFormatter } from './util/Utils.js';
-import { getSuccessRateClassification, srArcClassLabels } from './util/MetricUtils.jsx' ;
+import _ from 'lodash';
 
 const maxNumNeighbors = 6; // max number of neighbor nodes to show in the octopus graph
 
