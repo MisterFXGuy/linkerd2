@@ -150,7 +150,7 @@ class NamespaceLanding extends React.Component {
         {this.renderResourceSection("pod", metrics.pod)}
         {this.renderResourceSection("authority", metrics.authority)}
       </div>
-    );
+    )
   }
 
   renderAccordion() {

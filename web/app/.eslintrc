@@ -10,13 +10,18 @@
       "jsx": true
     }
   },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "16.5.0"
+    }
+  },
   "env": {
     "browser": true,
-    "es6": true,
-    "mocha": true
+    "es6": true
   },
   "extends" : [
-    "airbnb",
+    "airbnb-base",
     "eslint:recommended",
     "plugin:promise/recommended",
     "plugin:react/recommended"
