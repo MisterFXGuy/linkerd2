@@ -60,12 +60,6 @@ class Namespaces extends React.Component {
     this.timerId = window.setInterval(this.loadFromServer, this.state.pollingInterval);
   }
 
-  componentWillReceiveProps(newProps) {
-    // React won't unmount this component when switching resource pages so we need to clear state
-    this.api.cancelCurrentRequests();
-    this.setState(this.getInitialState(newProps.match.params));
-  }
-
   componentWillUnmount() {
     window.clearInterval(this.timerId);
     this.api.cancelCurrentRequests();

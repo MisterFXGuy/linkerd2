@@ -34,7 +34,9 @@ export class ResourceDetailBase extends React.Component {
     api: PropTypes.shape({
       PrefixedLink: PropTypes.func.isRequired,
     }).isRequired,
-    match: PropTypes.shape({}).isRequired,
+    match: PropTypes.shape({
+      url: PropTypes.string.isRequired
+    }).isRequired,
     pathPrefix: PropTypes.string.isRequired
   }
 
@@ -74,11 +76,13 @@ export class ResourceDetailBase extends React.Component {
     this.timerId = window.setInterval(this.loadFromServer, this.state.pollingInterval);
   }
 
-  componentWillReceiveProps(newProps) {
-    // React won't unmount this component when switching resource pages so we need to clear state
-    this.api.cancelCurrentRequests();
-    this.unmeshedSources = {};
-    this.setState(this.getInitialState(newProps.match, newProps.pathPrefix));
+  componentDidUpdate(prevProps) {
+    if (!_.isEqual(prevProps.match.url, this.props.match.url)) {
+      // React won't unmount this component when switching resource pages so we need to clear state
+      this.api.cancelCurrentRequests();
+      this.unmeshedSources = {};
+      this.setState(this.getInitialState(this.props.match, this.props.pathPrefix));
+    }
   }
 
   componentWillUnmount() {
